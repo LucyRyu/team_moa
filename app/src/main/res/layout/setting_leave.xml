@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#1ABC9C"
+        android:id="@+id/linearLayout">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="회원탈퇴"
+            android:textSize="24dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+            android:id="@+id/settingTitle" />
+    </LinearLayout>
+
+
+    <Button android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:onClick="onButton1Clicked"
+        android:textSize="24dp"
+        android:text="회원탈퇴"
+        android:textColor="#FFFFFF"
+        android:background="#2ECC71"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/button_leave"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textSize="14dp"
+        android:text="위의 버튼을 누르면 대화상자가 보여집니다."
+        android:id="@+id/textView1"
+        android:textColor="#ffad6535"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/button_leave"/>
+
+</RelativeLayout>

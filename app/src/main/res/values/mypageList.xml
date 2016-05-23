@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mypageList">
+        <item>내 정보 변경</item>
+        <item>참가 내역</item>
+        <item>메뉴 선택</item>
+        <item>매칭 완료</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,156 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingTop="10dp">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="180dp"
+            android:layout_height="fill_parent"
+            android:paddingTop="10dp">
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="기획자 "
+                android:id="@+id/CB_planner"
+                />
+
+            <CheckBox
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:text="개발자 "
+                android:id="@+id/CB_developer"
+                android:layout_below="@id/CB_planner"/>
+
+            <CheckBox
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:text="디자이너 "
+                android:id="@+id/CB_designer"
+                android:layout_below="@id/CB_developer"/>
+
+            <CheckBox
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:text="Android "
+                android:id="@+id/CB_Android"
+                android:layout_below="@id/CB_designer"/>
+
+            <CheckBox
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:text="IOS "
+                android:id="@+id/CB_IOS"
+                android:layout_below="@id/CB_Android"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:paddingTop="10dp">
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="팀 "
+                android:id="@+id/CB_team"
+                />
+
+            <CheckBox
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:text="팀원 "
+                android:id="@+id/CB_member"
+                android:layout_below="@id/CB_team"/>
+
+            <CheckBox
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:text="C언어 "
+                android:id="@+id/CB_c"
+                android:layout_below="@id/CB_member"/>
+
+            <CheckBox
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:text="JAVA "
+                android:id="@+id/CB_java"
+                android:layout_below="@id/CB_c"/>
+
+            <CheckBox
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:text="UI/UX "
+                android:id="@+id/CB_uiux"
+                android:layout_below="@id/CB_java"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/linearLayout2"
+        android:weightSum="1"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp">
+
+        <TextView
+            android:layout_width="281dp"
+            android:layout_height="60dp"
+            android:background="#2ECC71"
+            android:gravity="top"
+            android:textSize="16dp"
+            android:textColor="#000000"
+            android:id="@+id/result_CB"
+            android:layout_gravity="right" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="조회"
+            android:id="@+id/cb_select" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/linearLayout2"
+        android:id="@+id/linearLayout3"
+        android:weightSum="1">
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/scrollView" >
+
+            <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/memberList" />
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

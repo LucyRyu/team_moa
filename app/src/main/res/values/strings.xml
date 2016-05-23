@@ -1,0 +1,31 @@
+<resources>
+        <string name="app_name">team_moa</string>
+        <string name="action_settings">Settings</string>
+        <string name="action_search">Search</string>
+        <string name="drawer_open">Open</string>
+        <string name="drawer_close">Close</string>
+
+        <string name="nav_item_memberlist">참가멤버</string>
+        <string name="nav_item_favoritemember">관심멤버</string>
+        <string name="nav_item_mypage">마이페이지</string>
+        <string name="nav_item_setting">설정</string>
+        <!-- navigation drawer item labels  -->
+        <string-array name="nav_drawer_labels">
+            <item>@string/nav_item_memberlist</item>
+            <item>@string/nav_item_favoritemember</item>
+            <item>@string/nav_item_mypage</item>
+            <item>@string/nav_item_setting</item>
+        </string-array>
+
+        <string name="title_memberlist">참가멤버</string>
+        <string name="title_favoritemember">관심멤버</string>
+        <string name="title_mypage">마이페이지</string>
+        <string name="title_setting">설정</string>
+
+
+        <string name="favorite_member1">관심멤버1</string>
+        <string name="favorite_member2">관심멤버2</string>
+        <string name="favorite_member3">관심멤버3</string>
+        <string name="favorite_member4">관심멤버4</string>
+
+</resources>

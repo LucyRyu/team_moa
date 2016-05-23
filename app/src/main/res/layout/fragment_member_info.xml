@@ -1,0 +1,161 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:id="@+id/linearLayout4"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/imageView3"
+            android:src="@drawable/ic_profile"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="63dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.88"
+            android:layout_gravity="right"
+            android:paddingLeft="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="팀명"
+                android:id="@+id/textView"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="어플리케이션명\n/프로젝트명"
+                android:id="@+id/textView2"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NEED"
+                android:id="@+id/textView3"
+                android:textStyle="bold"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="개발자 1 디자이너 2"
+                android:id="@+id/textView4" />
+        </LinearLayout>
+
+        <ImageButton
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/imageButton"
+            android:src="@drawable/e_star"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/linearLayout4"
+        android:id="@+id/linearLayout5"
+        android:weightSum="1"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="메세지 보내기"
+            android:id="@+id/button2"
+            android:layout_weight="0.4" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="친구에게 추천하기"
+            android:id="@+id/button3"
+            android:layout_weight="0.4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linearLayout5"
+        android:paddingTop="20dp"
+        android:paddingLeft="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="프로젝트 명"
+            android:id="@+id/textView5"
+            android:paddingBottom="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="XX어플리케이션"
+            android:id="@+id/textView6"
+            android:paddingBottom="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="팀장"
+            android:id="@+id/textView7"
+            android:paddingBottom="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="USER NAME"
+            android:id="@+id/textView8"
+            android:paddingBottom="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="사용하려는 Tool 및 언어"
+            android:id="@+id/textView9"
+            android:paddingBottom="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="C언어, 포토샵"
+            android:id="@+id/textView10"
+            android:paddingBottom="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="프로젝트 설명"
+            android:id="@+id/textView11"
+            android:paddingBottom="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="프로젝트설명입니다~~~~~~~~"
+            android:id="@+id/textView12"
+            android:paddingBottom="10dp"/>
+    </LinearLayout>
+
+</RelativeLayout>

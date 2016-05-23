@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal|bottom">
+
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:background="#1ABC9C"
+                android:layout_gravity="center_horizontal|center_vertical|center"
+                android:id="@+id/imageView" />
+
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:id="@+id/et_Login_Id1"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:hint="아이디"
+                android:cursorVisible="true"
+                android:paddingLeft="10dp"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textCursorDrawable="@null"
+                android:singleLine="true"
+                android:layout_gravity="center_vertical" />
+
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:id="@+id/et_Login_Id2"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:hint="비밀번호"
+                android:cursorVisible="true"
+                android:paddingLeft="10dp"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textCursorDrawable="@null"
+                android:singleLine="true" />
+
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:id="@+id/et_Login_Id3"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:hint="학교"
+                android:cursorVisible="true"
+                android:paddingLeft="10dp"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textCursorDrawable="@null"
+                android:singleLine="true" />
+
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:id="@+id/et_Login_Id4"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:hint="전공"
+                android:cursorVisible="true"
+                android:paddingLeft="10dp"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textCursorDrawable="@null"
+                android:singleLine="true" />
+
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:id="@+id/et_Login_Id5"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:hint="다룰 수 있는 Tool이나 언어"
+                android:cursorVisible="true"
+                android:paddingLeft="10dp"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textCursorDrawable="@null"
+                android:singleLine="true" />
+
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:id="@+id/et_Login_Id6"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:hint="활동내역"
+                android:cursorVisible="true"
+                android:paddingLeft="10dp"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textCursorDrawable="@null"
+                android:singleLine="true" />
+
+            <CheckBox
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="기획자"
+                android:id="@+id/checkedTextView1" />
+
+            <CheckBox
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="개발자"
+                android:id="@+id/checkedTextView2" />
+
+            <CheckBox
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="디자이너"
+                android:id="@+id/checkedTextView3" />
+
+            <CheckBox
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="팀"
+                android:id="@+id/checkedTextView4" />
+
+            <CheckBox
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="팀원"
+                android:id="@+id/checkedTextView5" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+</RelativeLayout>
