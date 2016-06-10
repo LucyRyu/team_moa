@@ -28,4 +28,8 @@
         <string name="favorite_member3">관심멤버3</string>
         <string name="favorite_member4">관심멤버4</string>
 
+        <string name="wid">이름</string>
+        <string name="name">분류</string>
+        <string name="url">역할</string>
+
 </resources>

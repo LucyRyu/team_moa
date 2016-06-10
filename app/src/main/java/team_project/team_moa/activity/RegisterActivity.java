@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
@@ -39,7 +41,9 @@ public class RegisterActivity extends AppCompatActivity {
     EditText et_id, et_pwd, et_name, et_school, et_email, et_major;
     EditText et_Skill1, et_Skill2, et_Skill3;
     EditText et_Activity;
-    //EditText et_devel, et_PM, et_desi, et_team, et_crew;
+
+    RadioGroup rg1;
+    RadioGroup rg2;
 
 
 
@@ -61,6 +65,8 @@ public class RegisterActivity extends AppCompatActivity {
         et_Skill3 = (EditText)findViewById(id.reg_Skill3);
         et_Activity = (EditText)findViewById(id.reg_Activity);
         et_email = (EditText)findViewById(id.reg_email);
+        rg1 = (RadioGroup) findViewById(id.group1);
+        rg2 = (RadioGroup) findViewById(id.group2);
 
 
 
@@ -76,6 +82,13 @@ public class RegisterActivity extends AppCompatActivity {
         bt_sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                RadioButton rd1 = (RadioButton) findViewById(rg1.getCheckedRadioButtonId());
+                RadioButton rd2 = (RadioButton) findViewById(rg2.getCheckedRadioButtonId());
+
+
+
+
                 if(check() == true){
                     new ConfirmTask().execute();
 
@@ -162,26 +175,26 @@ public class RegisterActivity extends AppCompatActivity {
             String postURL = LoginActivity.server_Ip + "/TeamMoa/confirm.jsp";  //연결할 JSP의 URL주소
 
             HttpPost post = new HttpPost(postURL);
-            List<NameValuePair> params = new ArrayList<NameValuePair>();
+    List<NameValuePair> params = new ArrayList<NameValuePair>();
 
-            //params.add(new BasicNameValuePair("식별값", 전송할 데이터));
-            params.add(new BasicNameValuePair("id", et_id.getText().toString()));  //JSP로 전송할 파라미터 추가
+    //params.add(new BasicNameValuePair("식별값", 전송할 데이터));
+    params.add(new BasicNameValuePair("id", et_id.getText().toString()));  //JSP로 전송할 파라미터 추가
 
-            UrlEncodedFormEntity ent = new UrlEncodedFormEntity(params, HTTP.UTF_8);
-            post.setEntity(ent);
-            HttpResponse responsePOST = client.execute(post);
-            HttpEntity resEntity = responsePOST.getEntity();
+    UrlEncodedFormEntity ent = new UrlEncodedFormEntity(params, HTTP.UTF_8);
+    post.setEntity(ent);
+    HttpResponse responsePOST = client.execute(post);
+    HttpEntity resEntity = responsePOST.getEntity();
 
-            if (resEntity != null) {
-                str = EntityUtils.toString(resEntity);
-            }
-            Log.i("str값", str);
-        }catch (Exception e)
+    if (resEntity != null) {
+        str = EntityUtils.toString(resEntity);
+    }
+    Log.i("str값", str);
+}catch (Exception e)
         {
-            e.printStackTrace();
+        e.printStackTrace();
         }
         return str;
-    }
+        }
 
     public void ConfirmGet(String Json){  //Json 파싱
 
@@ -218,6 +231,11 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     public String RegisterSend(){
+        RadioButton rd1 = (RadioButton) findViewById(rg1.getCheckedRadioButtonId());
+        RadioButton rd2 = (RadioButton) findViewById(rg2.getCheckedRadioButtonId());
+
+    //    String str_Qtype1 = rd1.getText().toString();
+    //    String str_Qtype2 = rd2.getText().toString();
         String str = "";
         try{
 
@@ -236,9 +254,12 @@ public class RegisterActivity extends AppCompatActivity {
             params.add(new BasicNameValuePair("account_Skill2", et_Skill2.getText().toString()));
             params.add(new BasicNameValuePair("account_Skill3", et_Skill3.getText().toString()));
             params.add(new BasicNameValuePair("Activity", et_Activity.getText().toString() ));
-            params.add(new BasicNameValuePair("Email", et_email.getText().toString()));
-          //  params.add(new BasicNameValuePair("devel",et_devel.getText().toString()));
-          //  params.add(new BasicNameValuePair("PM", et_PM.getText().toString()));
+
+            params.add(new BasicNameValuePair("group1",rd1.getText().toString()));
+            params.add(new BasicNameValuePair("group2",rd2.getText().toString()));
+
+
+
 
 
             UrlEncodedFormEntity ent = new UrlEncodedFormEntity(params, HTTP.UTF_8);

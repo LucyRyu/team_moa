@@ -221,7 +221,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="참가구성원을 선택해주세요(중복 가능)"
+                android:text="참가구성원을 선택해주세요"
                 android:textColor="#000000"
                 android:textSize="18dp"
                 />
@@ -236,7 +236,13 @@
                 android:layout_marginTop="5dp"
 
                 >
-                <CheckBox
+                <RadioGroup
+                    android:id="@+id/group1"
+                    android:layout_width ="fill_parent"
+                    android:layout_height ="wrap_content"
+                    android:orientation="horizontal">
+
+                <RadioButton
                     android:id="@+id/reg_devel"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -247,7 +253,7 @@
                     android:layout_marginTop="5dp"
 
                     />
-                <CheckBox
+                <RadioButton
                     android:id="@+id/reg_PM"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -257,7 +263,7 @@
                     android:layout_marginTop="5dp"
 
                     />
-                <CheckBox
+                <RadioButton
                     android:id="@+id/reg_desi"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -266,20 +272,44 @@
                     android:layout_marginTop="5dp"
 
                     />
-                <CheckBox
+            </RadioGroup>
+                </GridLayout>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="참가구성원을 선택해주세요"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                />
+            <GridLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cancel_button"
+                android:orientation="horizontal"
+                android:columnCount="3"
+                android:layout_marginTop="5dp">
+                <RadioGroup
+                    android:id="@+id/group2"
+                    android:layout_width ="fill_parent"
+                    android:layout_height ="wrap_content"
+                    android:orientation="horizontal">
+                <RadioButton
                     android:id="@+id/reg_team"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="팀"
                     android:layout_marginLeft="10dp"
                     android:textColor="#000000" />
-                <CheckBox
+                <RadioButton
                     android:id="@+id/reg_crew"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="팀원"
                     android:textColor="#000000" />
-
+                </RadioGroup>
 
 
             </GridLayout>

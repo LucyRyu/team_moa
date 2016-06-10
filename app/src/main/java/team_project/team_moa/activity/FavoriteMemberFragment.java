@@ -1,113 +1,174 @@
 package team_project.team_moa.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
+import android.os.StrictMode;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import team_project.team_moa.R;
 
 /**
  * Created by LUCY on 2016-05-09.
  */
-public class FavoriteMemberFragment extends Fragment {
-    public FavoriteMemberFragment() {
-        // Required empty public constructor
-    }
+public class FavoriteMemberFragment extends Activity {
 
-    // Array of strings storing country names
-    String[] memberName = new String[] {
-            "유저1",
-            "유저2",
-            "유저3",
-            "유저4",
-            "유저5"
-    };
 
-    // Array of integers points to images stored in /res/drawable-ldpi/
-    int[] img = new int[]{
-            R.drawable.ic_profile,
-            R.drawable.ic_profile,
-            R.drawable.ic_profile,
-            R.drawable.ic_profile,
-            R.drawable.ic_profile
-    };
+    /*
+        SQLiteDatabase db;
+        MySQLiteOpenHelper helper;
+        // 전역변수로 사용할 것들을 미리 빼두었다.
+    */
 
-    // Array of strings to store currencies
-    String[] memberjob = new String[]{
-            "Indian Rupee",
-            "Pakistani Rupee",
-            "Sri Lankan Rupee",
-            "Renminbi",
-            "korea"
-    };
 
-    int[] star = new int[]{
-            R.drawable.e_star,
-            R.drawable.e_star,
-            R.drawable.e_star,
-            R.drawable.e_star,
-            R.drawable.e_star
-    };
+    /*
+    ListView list;
+    MemberList_DBHelper dbHelper;
+    SQLiteDatabase db;
+    String sql;
+    Cursor cursor;
+
+    final static String dbName = "account.db";
+    final static int dbVersion = 2;
+*/
+
+    ListView listView;
+
+    ArrayList<HashMap<String, String>> arrList;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.favorite_list_first);
 
         /*
-        // Each row in the list stores country name, currency and flag
-        List<HashMap<String,String>> aList = new ArrayList<HashMap<String,String>>();
+        list = (ListView)findViewById(R.id.memberlist);
+        dbHelper = new MemberList_DBHelper(this, dbName, null, dbVersion);
 
-        for(int i=0;i<10;i++){
-            HashMap<String, String> hm = new HashMap<String,String>();
-            hm.put("txt", memberName[i]);
-            hm.put("cur", memberjob[i]);
-            hm.put("img", Integer.toString(img[i]) );
-            hm.put("star", Integer.toString(star[i]) );
-            aList.add(hm);
+        selectDB();
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                cursor.moveToPosition(position);
+                String str = cursor.getString(cursor.getColumnIndex("name"));
+                Toast.makeText(getApplicationContext(), str, Toast.LENGTH_SHORT).show();
+            }
+        });
+        */
+
+        listView = (ListView) findViewById(R.id.memberlist);
+        arrList = new ArrayList<HashMap<String, String>>();
+
+        String json_str = getJsonData();
+
+        try{
+            JSONArray jArray = new JSONArray(json_str);
+
+            for (int i = 0; i < jArray.length(); i++) {
+                JSONObject json = null;
+                json = jArray.getJSONObject(i);
+
+                HashMap<String, String> map1 = new HashMap<String, String>();
+
+                // adding each child node to HashMap key => value
+                map1.put("id", json.getString("name"));
+                map1.put("name", json.getString("devel"));
+                map1.put("address", json.getString("PM"));
+
+                // adding HashList to ArrayList
+                arrList.add(map1);
+            }
+
+        } catch ( JSONException e) {
+            e.printStackTrace();
         }
 
-        // Keys used in Hashmap
-        String[] from = { "img","txt","cur","star" };
+        if(!arrList.isEmpty()){
+            ListAdapter adapter = new SimpleAdapter( this, arrList,
+                    R.layout.member_list_item, new String[] { "id", "name", "address" },
+                    new int[] { R.id.wid, R.id.name, R.id.url });
 
-        // Ids of views in listview_layout
-        int[] to = { R.id.user_Image,R.id.User_Name,R.id.User_job,R.id.favorite_bt};
+            listView.setAdapter(adapter);
+        }
 
-        // Instantiating an adapter to store each items
-        // R.layout.listview_layout defines the layout of each item
-        //SimpleAdapter adapter = new SimpleAdapter(getActivity(), aList, R.layout.fragment_favoritemember, from, to);
 
-        // Getting a reference to listview of main.xml layout file
-        ListView listView = (ListView) getActivity().findViewById(R.id.favoritelist);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                // Send single item click data to SingleItemView Class
+                Intent i = new Intent(FavoriteMemberFragment.this,
+                        SingleItemView.class);
+                // Pass data "name" followed by the position
 
-        // Setting the adapter to the listView
-        //listView.setAdapter(adapter);
-        */
+                // Open SingleItemView.java Activity
+                startActivity(i);
+            }
+        });
+
+
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_favoritemember, container, false);
+    /*
+    private void selectDB(){
+        db = dbHelper.getWritableDatabase();
+        sql = "SELECT * FROM account;";
 
+        cursor = db.rawQuery(sql, null);
+        if(cursor.getCount() > 0){
+            startManagingCursor(cursor);
+            Memberlist_DBAdapter dbAdapter = new Memberlist_DBAdapter(this, cursor);
+            list.setAdapter(dbAdapter);
+        }
+    }
+    */
 
-        // Inflate the layout for this fragment
-        return rootView;
+    private String getJsonData(){
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+                .detectDiskReads()
+                .detectDiskWrites()
+                .detectNetwork()   // or .detectAll() for all detectable problems
+                .penaltyLog()
+                .build());
+
+        String str = "";
+        HttpResponse response;
+        HttpClient myClient = new DefaultHttpClient();
+        HttpPost myConnection = new HttpPost("http://220.149.11.229/favorite_list.php");
+
+        try {
+            response = myClient.execute(myConnection);
+            str = EntityUtils.toString(response.getEntity(), "UTF-8");
+
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return str;
     }
 
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-    }
 
 
 }

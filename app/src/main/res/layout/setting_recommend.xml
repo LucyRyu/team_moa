@@ -23,26 +23,47 @@
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/ll_top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:hint="제목"
+            android:singleLine="true"
+            />
+
+        <EditText
+            android:id="@+id/et_contact"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:hint="내용"
+            android:singleLine="true"
+            />
+
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="추가"
+            android:onClick="onClick"
+            android:background="#2ECC71"
+            />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_list"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@+id/linearLayout">
-        <ListView
-            android:id="@+id/listView1"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            />
-        <Button
-            android:id="@+id/button_recommend"
-            android:onClick="onButtonClicked"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:textColor="#FFFFFF"
-            android:background="#2ECC71"
-            android:text="글쓰기"
-            />
-    </LinearLayout>
+        android:layout_below="@+id/ll_top"
+        />
 
 </RelativeLayout>

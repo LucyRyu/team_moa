@@ -1,6 +1,286 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#1ABC9C"
+        android:id="@+id/linearLayout"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="마이페이지"
+            android:textSize="24dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+            android:id="@+id/settingTitle" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/nav_header_container"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary">
+        >
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_profile"
+            android:scaleType="fitCenter"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/imageView2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="사진 변경"
+            android:textSize="16dp"
+            android:scaleType="fitCenter"
+            android:id="@+id/UserName"
+            android:paddingTop="5dp"
+            android:layout_below="@+id/imageView2"
+            android:layout_alignRight="@+id/imageView2"
+            android:layout_alignEnd="@+id/imageView2" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        >
+        <EditText
+            android:id="@+id/reg_name"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/cancel_button"
+            android:paddingLeft="10dp"
+            android:hint="이름"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textCursorDrawable="@null"
+            android:singleLine="true"
+            android:textColor="#000000" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        >
+        <EditText
+            android:id="@+id/reg_school"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/cancel_button"
+            android:paddingLeft="10dp"
+            android:textCursorDrawable="@null"
+            android:hint="학교"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="#000000" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        >
+        <EditText
+            android:id="@+id/reg_major"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/cancel_button"
+            android:paddingLeft="10dp"
+            android:textCursorDrawable="@null"
+            android:hint="전공"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="#000000" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="기술을 입력해주세요(최소1개)"
+            android:textSize="18dp"
+            android:textColor="#000000"
+            />
+    </LinearLayout>
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:columnCount="3"
+        >
+        <EditText
+            android:id="@+id/reg_Skill1"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:background="@drawable/cancel_button"
+            android:paddingLeft="10dp"
+            android:textCursorDrawable="@null"
+            android:hint="예:java,c"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="#000000"
+            android:layout_marginRight="10dp"/>
+        <EditText
+            android:id="@+id/reg_Skill2"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:background="@drawable/cancel_button"
+            android:paddingLeft="10dp"
+            android:textCursorDrawable="@null"
+            android:hint="예:css"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="#000000"
+            android:layout_marginRight="10dp"
+            />
+        <EditText
+            android:id="@+id/reg_Skill3"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:background="@drawable/cancel_button"
+            android:paddingLeft="10dp"
+            android:textCursorDrawable="@null"
+            android:hint="예:PsCC"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="#000000"
+            />
+    </GridLayout>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="참가구성원을 선택해주세요(중복 가능)"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        />
+
+    <GridLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/cancel_button"
+        android:orientation="horizontal"
+        android:columnCount="3"
+        android:layout_marginTop="5dp"
+
+        >
+        <CheckBox
+            android:id="@+id/reg_devel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="개발자"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000000"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+
+            />
+        <CheckBox
+            android:id="@+id/reg_PM"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="기확자"
+            android:textColor="#000000"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+
+            />
+        <CheckBox
+            android:id="@+id/reg_desi"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="디자이너"
+            android:textColor="#000000"
+            android:layout_marginTop="5dp"
+
+            />
+        <CheckBox
+            android:id="@+id/reg_team"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="팀"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000000" />
+        <CheckBox
+            android:id="@+id/reg_crew"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="팀원"
+            android:textColor="#000000" />
+
+
+
+    </GridLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        >
+        <TextView
+            android:id="@+id/Activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="활동내역"
+            android:textSize="18dp"
+            android:textColor="#000000"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        >
+
+        <EditText
+            android:id="@+id/reg_Activity"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:background="@drawable/cancel_button"
+            android:paddingLeft="10dp"
+            android:textCursorDrawable="@null"
+            android:layout_marginTop="1dp"
+            android:hint="활동내용을 입력해주세요"
+            android:gravity="top"
+            android:inputType="text"
+            android:maxLines="4"
+            android:singleLine="true"
+            android:textColor="#000000" />
+    </LinearLayout>
 
 </LinearLayout>

@@ -6,7 +6,8 @@
         android:name="team_project.team_moa.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.team.two.fastorder.permission.MAPS_RECEIVE" />
+        <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+        <uses-permission android:name="com.team.two.fastorder.permission.MAPS_RECEIVE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
@@ -28,16 +29,22 @@
                 android:name=".activity.LoginActivity"
                 android:label="@string/app_name"
                 android:windowSoftInputMode="stateAlwaysHidden" >
-                <intent-filter>
-                    <action android:name="android.intent.action.MAIN" />
 
-                    <category android:name="android.intent.category.LAUNCHER" />
-                </intent-filter>
+
+
             </activity>
 
             <activity
                 android:name=".activity.MainActivity"
                 android:label="@string/app_name">
+
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+
+                    <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+
+
                 <meta-data
                     android:name="android.app.default_searchable"
                     android:value=".SearchActivity" />
@@ -57,6 +64,23 @@
                 android:value="@integer/google_play_services_version" />
 
 
+            <activity android:name=".activity.FavoriteMemberFragment" >
+            </activity>
+
+            <activity
+                android:name=".activity.RegisterActivity">
+            </activity>
+
+            <activity
+                android:name=".activity.MemberActivity">
+            </activity>
+
+            <activity android:name=".activity.SingleItemView" >
+            </activity>
+
+            <activity android:name=".activity.Chatting" >
+            </activity>
+
             <activity
                 android:name=".activity.SettingActivity">
             </activity>
@@ -75,6 +99,29 @@
             <activity
                 android:name=".activity.Setting_leave">
             </activity>
+
+            <activity
+                android:name=".activity.Splash"
+                android:theme="@android:style/Theme.NoTitleBar">
+            </activity>
+
+            <activity
+                android:name=".activity.MypageFragment">
+            </activity>
+            <activity
+                android:name=".activity.MypageCondition">
+            </activity>
+            <activity
+                android:name=".activity.MypageInfo">
+            </activity>
+            <activity
+                android:name=".activity.MypageJoin">
+            </activity>
+            <activity
+                android:name=".activity.MypageMenu">
+            </activity>
+
+
         </application>
 
     </manifest>

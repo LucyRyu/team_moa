@@ -1,1 +1,1 @@
-include ':app'
+include ':app', ':commons-logging-1.2', ':httpclient-4.5.1', ':httpcore-4.4.3', ':json_simple-1.1', ':library'

@@ -1,2 +1,0 @@
-configurations.create("default")
-artifacts.add("default", file('commons-logging-1.2.jar'))

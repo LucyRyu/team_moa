@@ -113,16 +113,18 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                 title = getString(R.string.title_memberlist);
                 break;
             case 1:
-                fragment = new FavoriteMemberFragment();
+                Intent intent = new Intent(MainActivity.this, FavoriteMemberFragment.class);
+                startActivity(intent);
                 title = getString(R.string.title_favoritemember);
                 break;
             case 2:
-                fragment = new MypageFragment();
+                Intent intent2 = new Intent(MainActivity.this, MypageMenu.class);
+                startActivity(intent2);
                 title = getString(R.string.title_mypage);
                 break;
             case 3:
-                Intent intent = new Intent(MainActivity.this, SettingActivity.class);
-                startActivity(intent);
+                Intent intent1 = new Intent(MainActivity.this, SettingActivity.class);
+                startActivity(intent1);
                 title = getString(R.string.title_setting);
                 break;
             default:

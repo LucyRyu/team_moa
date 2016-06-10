@@ -38,7 +38,7 @@ import team_project.team_moa.R;
  * A login screen that offers login via email/password.
  */
 public class LoginActivity extends AppCompatActivity {
-    public static String server_Ip = "http://220.149.12.226:8080";
+    public static String server_Ip = "http://220.149.11.229:8080";
     public static int account_Idx;
     boolean isLogout = false;
 

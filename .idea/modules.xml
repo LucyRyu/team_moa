@@ -3,7 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/teammoa.iml" filepath="$PROJECT_DIR$/teammoa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons-logging-1.2/commons-logging-1.2.iml" filepath="$PROJECT_DIR$/commons-logging-1.2/commons-logging-1.2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/httpclient-4.5.1/httpclient-4.5.1.iml" filepath="$PROJECT_DIR$/httpclient-4.5.1/httpclient-4.5.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/httpcore-4.4.3/httpcore-4.4.3.iml" filepath="$PROJECT_DIR$/httpcore-4.4.3/httpcore-4.4.3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/json_simple-1.1/json_simple-1.1.iml" filepath="$PROJECT_DIR$/json_simple-1.1/json_simple-1.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/teammoa3.iml" filepath="$PROJECT_DIR$/teammoa3.iml" />
     </modules>
   </component>
 </project>

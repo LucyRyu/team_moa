@@ -2,6 +2,7 @@ package team_project.team_moa.activity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -32,6 +33,13 @@ public class Setting_leave extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(getApplicationContext(), "예 버튼이 눌러졌습니다.", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(Setting_leave.this,
+                        LoginActivity.class);
+                // Pass data "name" followed by the position
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                // Open SingleItemView.java Activity
+                startActivity(i);
+                finish();
             }
         });
         builder.setPositiveButton("아니오", new DialogInterface.OnClickListener() {
